@@ -1,12 +1,11 @@
 ## FBI WANTED API DATA EXTRACTION
 
 ### AUTHOR
-
-Name: Avaneesh Khandekar
+##### Avaneesh Khandekar
 
 ### INSTALLATION
 
-To Install required dependencies: `pipenv install -e`
+To Install required dependencies: `pipenv install`
 
 ### USAGE
 
@@ -68,29 +67,46 @@ this case no API call is made/ local file is used instead)
 ### TESTS
 
 #### `test_fetch_details_from_api`
+
 - **Function Tested**: `fetch_details_from_api(page_number)`
-- **Description**: Tests data is extracted from FBI API. 
-- **Asserts**: Response size and Response type
+- **Description**: Tests data is extracted from FBI API.
+- **Asserts**: Response type and Response size.
+
+#### `test_fetch_details_from_api_no_data`
+
+- **Function Tested**: `fetch_details_from_api(page_number)`
+- **Description**: Tests no data is returned from FBI API.
+- **Asserts**: Response is "No Data Found".
+
+#### `test_fetch_details_from_valid_data`
+
+- **Function Tested**: `fetch_details_from_api(page_number)`
+- **Description**: Tests valid data is extracted from FBI API.
+- **Asserts**: Response size and Response type and formatted result.
 
 #### `test_fetch_details_local`
+
 - **Function Tested**: `fetch_details_local(file_path)`
 - **Description**: Tests data is extracted from a local JSON.
-- **Asserts**: Result Type, Result Size, Formatted Result
+- **Asserts**: Result Type, Result Size and formatted result.
 
 #### `test_format_data`
+
 - **Function Tested**: `format_data(data)`
 - **Description**: Tests Data is formatted with thorn character.
   character.
-- **Asserts**: Formatted Strings with Thorn character,
+- **Asserts**: Formatted Strings with Thorn character.
 
 #### `test_format_data_empty_items`
+
 - **Function Tested**: `format_data(data)`
 - **Description**: Tests function when no items are in data.
-- **Asserts**: Response is "No items available"
+- **Asserts**: Response is "No items available".
 
 #### `test_print_data`
+
 - **Function Tested**: `print_data(data)`
-- **Description**: Tests response is printed to STD OUT
+- **Description**: Tests response is printed to STD OUT.
 - **Asserts**: Captures STD OUT response and asserts it.
 
 ### BUGS & ASSUMPTIONS:
