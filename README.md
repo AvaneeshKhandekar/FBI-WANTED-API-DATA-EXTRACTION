@@ -27,9 +27,9 @@ It parses the response in json and extracts 3 fields from the response:
 - Subject - List of Strings
 - Field Office - List of Strings\
   The extracted data is then formatted in the specified format:\
-  `{title}þ{subjects}þ{field_offices}`\
+  `{title}þ{subjects}þ{field_offices}`
 
-Once, formatted the result is printed to console line by line for each item retrieved from the API.\
+Once, formatted the result is printed to console line by line for each item retrieved from the API.
 
 This script also has the functionality to extract data directly from a JSON that matches the format of the FBI API. (In
 this case no API call is made/ local file is used instead)
@@ -64,6 +64,34 @@ this case no API call is made/ local file is used instead)
 - **Params**:
     - `data` (list): LIST OF Strings.
 - **Returns**: None, prints to STD OUT.
+
+### TESTS
+
+#### `test_fetch_details_from_api`
+- **Function Tested**: `fetch_details_from_api(page_number)`
+- **Description**: Tests data is extracted from FBI API. 
+- **Asserts**: Response size and Response type
+
+#### `test_fetch_details_local`
+- **Function Tested**: `fetch_details_local(file_path)`
+- **Description**: Tests data is extracted from a local JSON.
+- **Asserts**: Result Type, Result Size, Formatted Result
+
+#### `test_format_data`
+- **Function Tested**: `format_data(data)`
+- **Description**: Tests Data is formatted with thorn character.
+  character.
+- **Asserts**: Formatted Strings with Thorn character,
+
+#### `test_format_data_empty_items`
+- **Function Tested**: `format_data(data)`
+- **Description**: Tests function when no items are in data.
+- **Asserts**: Response is "No items available"
+
+#### `test_print_data`
+- **Function Tested**: `print_data(data)`
+- **Description**: Tests response is printed to STD OUT
+- **Asserts**: Captures STD OUT response and asserts it.
 
 ### BUGS & ASSUMPTIONS:
 
