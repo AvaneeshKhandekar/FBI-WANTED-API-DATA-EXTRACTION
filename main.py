@@ -43,7 +43,7 @@ def print_data(data):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Fetch page from API or local based on user input.")
-    parser.add_argument("--page", type=int, required=False, help="Path to local Json File.")
+    parser.add_argument("--page", type=int, required=False, help="Page Number to fetch.")
     parser.add_argument("--file", type=str, required=False, help="Path to local Json File.")
     args = parser.parse_args()
 
